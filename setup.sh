@@ -10,8 +10,10 @@ create_directory() {
 create_directory ~/.config
 create_directory ~/.local/share/fonts
 create_directory ~/.local/lib
+create_directory ~/.local/bin
 
 echo "Setting up configs"
+mv config/lf-* ~/.local/bin
 for dir in config/*; do
     if [ -d "$dir" ]; then
         cp -r "$dir" ~/.config/ && echo "Moved $dir to ~/.config/"
