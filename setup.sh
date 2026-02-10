@@ -26,9 +26,9 @@ echo "Installing urxvt perl extensions"
 cp -r urxvt/perls ~/.local/lib || echo "Failed - perl extensions"
 
 echo "Moving fonts"
-cp -r urxvt/FiraCodeNerdFont-Regular.ttf ~/.local/share/fonts/ || echo "Failed - FiraCodeRegular.ttf"
-cp -r urxvt/FiraCodeNerdFont-Bold.ttf ~/.local/share/fonts/ || echo "Failed - FiraCodeBold.ttf"
-cp -r urxvt/FSEX300.ttf ~/.local/share/fonts/ || echo "Failed - FSEX300.ttf"
+cp -r urxvt/fonts/FiraCodeNerdFont-Regular.ttf ~/.local/share/fonts/ || echo "Failed - FiraCodeRegular.ttf"
+cp -r urxvt/fonts/FiraCodeNerdFont-Bold.ttf ~/.local/share/fonts/ || echo "Failed - FiraCodeBold.ttf"
+cp -r urxvt/fonts/FSEX300.ttf ~/.local/share/fonts/ || echo "Failed - FSEX300.ttf"
 echo "Installing fonts"
 fc-cache -fv
 
