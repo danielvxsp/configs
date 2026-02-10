@@ -1,0 +1,66 @@
+#include "/home/$USER/.cache/wal/colors.Xresources"
+
+! --- xterm Specific ---
+xterm*termName: xterm-256color
+xterm*internalBorder: 2
+xterm*faceSize: 12
+xterm*cursorUnderline: true
+xterm*cursorColor: #d8dee9
+xterm*cursorBlink: true
+xterm*scrollbar: false
+xterm*wideChars: true
+xterm*utf8: 1
+xterm*locale: true
+
+! xterm Keybindings
+xterm*vt100.translations: #override \n\
+    Alt <Key>c: copy-selection(CLIPBOARD) \n\
+    Alt <Key>v: insert-selection(CLIPBOARD) \n\
+    ~Shift Alt <Key>k: scroll-back(1, line) \n\
+    ~Shift Alt <Key>j: scroll-forw(1, line) \n\
+    Shift Alt <Key>k: larger-vt-font() \n\
+    Shift Alt <Key>j: smaller-vt-font() \n\
+    Shift Alt <Key>Home: set-vt-font(d)
+
+! --- urxvt Specific ---
+URxvt.geometry: 80x-1
+URxvt.termName: rxvt-unicode-256color
+URxvt.font: xft:Fixedsys Excelsior 3.01:size=16, \
+            xft:Hack Nerd Font Mono:size=16
+
+URxvt.boldFont: xft:Fixedsys Excelsior 3.01:style=Bold:size=16, \
+                xft:Hack Nerd Font Mono:style=Bold:size=16
+
+! Appearance & Layout
+URxvt.scrollBar: false
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0
+URxvt.thickness: 0
+URxvt.letterSpace: -1
+URxvt.lineSpace: 0
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.unicode3: true
+
+! Cursor
+URxvt.cursorColor: #d8dee9
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: true
+
+! --- urxvt Keybindings & Extensions ---
+URxvt.perl-ext-common: default,font-size,eval,selection-to-clipboard
+URxvt*perl-lib: /home/$USER/.local/lib/perls
+
+! 3. Keybindings
+! Copy & Paste (requires selection-to-clipboard script)
+URxvt.keysym.M-c: eval:selection_to_clipboard
+URxvt.keysym.M-v: eval:paste_clipboard
+
+! Scrolling
+URxvt.keysym.M-k: eval:scroll_up_pages 0.1
+URxvt.keysym.M-j: eval:scroll_down_pages 0.1
+
+! Font Resizing (requires font-size script)
+URxvt.keysym.M-S-K:     perl:font-size:incglobal
+URxvt.keysym.M-S-J:     perl:font-size:decglobal
+URxvt.keysym.M-S-Home:  perl:font-size:reset
